@@ -11,3 +11,7 @@ Install the packages by typing:
 Run with:
 
 `npm start`
+
+Run Tailwind output styles with:
+
+`npm run dev`
