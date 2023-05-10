@@ -1,6 +1,6 @@
 # ToDo-List-VanillaJS
 
-A basic to-do list using vanilla JS + Tailwind
+A basic to-do list made with vanilla JS + Tailwind
 
 # How to run
 
