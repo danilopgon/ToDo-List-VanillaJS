@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="./src/output.css" rel="stylesheet" />
-    <script src="./src/app.js"></script>
+    <script src="./src/app.js" defer></script>
   </head>
   <body class="bg-gray-200">
     <div
@@ -15,13 +15,14 @@
       <div
         class="min-h-2/4 m-5 flex flex-col content-around gap-6 rounded-lg border border-b-8 border-r-8 border-black bg-lime-400 px-5 py-10 shadow-lg md:w-full lg:w-2/4"
       >
-        <h1 class="text-center font-mono text-4xl text-gray-900" id="title">
+        <h1 class="text-center font-mono text-3xl text-gray-900" id="title">
           We have work to do...
         </h1>
         <input
-          class="mx-auto w-11/12 rounded-lg border border-b-4 border-r-4 border-black bg-gray-200 p-6 font-mono text-xl duration-300 ease-out focus:scale-105 focus:ring-offset-lime-900"
+          class="mx-auto w-11/12 rounded-lg border border-b-4 border-r-4 border-black bg-gray-200 p-6 font-mono text-xl duration-300 ease-out focus:scale-105"
           id="addToDo"
           type="text"
+          maxlength="24"
           placeholder="New task"
         />
         <ul class="mx-auto flex w-11/12 flex-col gap-6 font-mono text-xl">

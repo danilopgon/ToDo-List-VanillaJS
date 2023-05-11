@@ -10,6 +10,7 @@ Install the packages by typing:
 
 Run with:
 
+`npm install live-server`
 `npm start`
 
 Run Tailwind output styles with:
