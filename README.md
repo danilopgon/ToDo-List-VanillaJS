@@ -10,7 +10,6 @@ Install the packages by typing:
 
 Run with:
 
-`npm install serve`
 `npm start`
 
 Run Tailwind output styles with:
