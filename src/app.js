@@ -20,6 +20,15 @@ const setDeleteTask = (taskButton) => {
   return taskButton;
 };
 
+const renderTaskButton = (inputText) => {
+  const listItem = document.createElement("li");
+  listItem.textContent = inputText;
+  listItem.className = TASK_CLASS;
+  taskList.appendChild(listItem);
+  setDeleteTask(listItem);
+  return listItem;
+};
+
 const setTaskInput = (addToDoInput) => {
   addToDoInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -32,15 +41,6 @@ const setTaskInput = (addToDoInput) => {
     }
   });
   return addToDoInput;
-};
-
-const renderTaskButton = (inputText) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = inputText;
-  listItem.className = TASK_CLASS;
-  taskList.appendChild(listItem);
-  setDeleteTask(listItem);
-  return listItem;
 };
 
 window.onload = function () {
