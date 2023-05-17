@@ -11,37 +11,42 @@ const titleCheck = () => {
     : (title.textContent = "We have work to do...");
 };
 
-const setDeleteTask = () => {
-  const buttons = document.querySelectorAll("li");
-  buttons.forEach((deleteButton) => {
-    deleteButton.addEventListener("click", () => {
-      deleteButton.remove();
-      titleCheck();
-    });
+const setDeleteTask = (taskButton) => {
+  taskButton.addEventListener("click", () => {
+    taskButton.remove();
+    titleCheck();
   });
+
+  return taskButton;
 };
 
-const setTaskToDo = (inputText) => {
+const renderTaskButton = (inputText) => {
   const listItem = document.createElement("li");
   listItem.textContent = inputText;
   listItem.className = TASK_CLASS;
   taskList.appendChild(listItem);
+  setDeleteTask(listItem);
+  return listItem;
 };
 
-addToDo.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    let inputText = addToDo.value.trim();
-    if (inputText.length !== 0) {
-      setTaskToDo(inputText);
-      addToDo.value = "";
-      setDeleteTask();
-      titleCheck();
+const setTaskInput = (addToDoInput) => {
+  addToDoInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      let inputText = addToDoInput.value.trim();
+      if (inputText.length !== 0) {
+        renderTaskButton(inputText);
+        addToDoInput.value = "";
+        titleCheck();
+      }
     }
-  }
-});
+  });
+  return addToDoInput;
+};
 
 window.onload = function () {
-  setDeleteTask();
+  renderTaskButton("Eat");
+  renderTaskButton("Sleep");
+  renderTaskButton("Code");
+  setTaskInput(addToDo);
   titleCheck();
 };
